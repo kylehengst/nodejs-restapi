@@ -22,6 +22,9 @@ app.get('/addUser', function (req, res) {
         data = JSON.parse( data );
         data["user4"] = user["user4"];
         console.log( data );
+
+        fs.writeFile(__dirname + "/" + "test.json",JSON.stringify(data, null, 4));
+
         res.end( JSON.stringify(data));
     });
 })
